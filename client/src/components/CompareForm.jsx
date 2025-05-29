@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RainbowButton } from "./magicui/rainbow-button";
 
-export default function CompareForm({ onCompare }) {
+export default function CompareForm({ onCompare, onCompareClick }) {
   const [user1, setUser1] = useState("");
   const [user2, setUser2] = useState("");
   const [loading, setLoading] = useState(false);
@@ -23,6 +23,8 @@ export default function CompareForm({ onCompare }) {
     } finally {
       setLoading(false);
     }
+    onCompareClick()
+    
   };
 
   return (
@@ -35,7 +37,7 @@ export default function CompareForm({ onCompare }) {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           {/* Left: Pixel-style image */}
           <img
-            src="./code.webp"
+            src="./image.jpg"
             alt="Pixel art"
             className="w-104 h-auto drop-shadow-lg rounded-lg"
           />
