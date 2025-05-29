@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import CompareForm from "./components/CompareForm";
+import ResultCard from "./components/ResultCard";
+import { RainbowButton } from "./components/magicui/rainbow-button";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [result, setResult] = useState(null);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen bg-[#FFF5EE] w-screen px-10 overflow-hidden ">
+      <div
+        className="flex items-center px-2"
+        style={{ justifyContent: "space-between" }}
+      >
+        <h4 className="px-3 py-2 bg-green-400 rounded-full text-black font-bold text-2xl ">
+          CS
+        </h4>
+        <h1 className=" text-xs font-[syne] font-bold text-black">
+          Crush-Sync
+        </h1>
+        <div>
+          <RainbowButton>follow me </RainbowButton>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <CompareForm onCompare={setResult} />
+      {result && <ResultCard data={result} />}
+    </div>
+  );
 }
-
-export default App
