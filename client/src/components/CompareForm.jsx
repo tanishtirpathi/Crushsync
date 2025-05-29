@@ -26,54 +26,56 @@ export default function CompareForm({ onCompare }) {
   };
 
   return (
-    <div className="my-14 flex items-center justify-center px-4">
-      <div className="rounded-2xl p-8 w-screen  ">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-white font-[syne] mb-2">
-            Check Your GitHub Chemistry
-          </h2>
-        </div>
+    <div className="min-h-screen w-screen    flex items-center justify-center px-4  py-16 text-white font-[syne]">
+      <div className="backdrop-blur-xl rounded-2xl p-10 w-full max-w-5xl shadow-2xl">
+        <h2 className="text-3xl font-bold text-center text-[#FFE23F] mb-8 drop-shadow">
+          💻 Check Your GitHub Chemistry 💖
+        </h2>
 
-        <div className="flex flex-col justify-center items-center gap-y-10 w-full">
-          <div
-            className="flex gap-20 w-full"
-            style={{ justifyContent: "space-around" }}
-          >
-            <div className="bg-gray-900 px-4 py-5 w-full rounded-md">
-              <label className="block text-gray-300 text-sm font-medium mb-2">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+          {/* Left: Pixel-style image */}
+          <img
+            src="./code.webp"
+            alt="Pixel art"
+            className="w-104 h-auto drop-shadow-lg rounded-lg"
+          />
+
+          {/* Right: Input Form */}
+          <div className="flex flex-col gap-8 w-full">
+            <div className="bg-[#0A0F2C] border border-[#3D73FF] p-5 rounded-lg shadow-inner">
+              <label className="block text-[#C3D0F7] text-sm font-semibold mb-2">
                 Your GitHub Username
               </label>
               <input
-                style={{ width: "100%" }}
-                className=" p-4 rounded-lg bg-gray-700 bg-opacity-80 text-white placeholder-gray-400 border border-gray-600 focus:border-orange-500 focus:outline-none transition-colors"
+                type="text"
+                className="w-full px-4 py-3 bg-[#1E2B57] text-white placeholder-[#6D7EB6] border border-[#3D73FF] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFE23F] transition"
                 placeholder="your-username"
                 value={user1}
                 onChange={(e) => setUser1(e.target.value)}
               />
             </div>
 
-            <div className="bg-gray-900 px-4 py-5 w-full rounded-md">
-              {" "}
-              <label className="block text-gray-300 text-sm font-medium mb-2">
+            <div className="bg-[#0A0F2C] border border-[#3D73FF] p-5 rounded-lg shadow-inner">
+              <label className="block text-[#C3D0F7] text-sm font-semibold mb-2">
                 Your Crush's GitHub Username
               </label>
               <input
-                className="w-full p-4 rounded-lg bg-gray-700 bg-opacity-80 text-white placeholder-gray-400 border border-gray-600 focus:border-orange-500 focus:outline-none transition-colors"
+                type="text"
+                className="w-full px-4 py-3 bg-[#1E2B57] text-white placeholder-[#6D7EB6] border border-[#3D73FF] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFE23F] transition"
                 placeholder="their-username"
                 value={user2}
                 onChange={(e) => setUser2(e.target.value)}
               />
             </div>
-          </div>
 
-          <div>
-           
-            <RainbowButton
-              onClick={handleCompare}
-              disabled={!user1 || !user2 || loading}
-            >
-              {loading ? "Checking Compatibility..." : "Check Compatibility"}
-            </RainbowButton>
+            <div className="text-center mt-4">
+              <RainbowButton
+                onClick={handleCompare}
+                disabled={!user1 || !user2 || loading}
+              >
+                {loading ? "Checking Compatibility..." : "Check Compatibility"}
+              </RainbowButton>
+            </div>
           </div>
         </div>
       </div>
