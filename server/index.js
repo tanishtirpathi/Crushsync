@@ -42,8 +42,8 @@ app.post("/compare", async (req, res) => {
 });
 
 // SPA fallback
-app.get("/client", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+app.get("../client", (req, res) => {
+  res.sendFile(path.join(__dirname, "./dist/index.html"));
 });
 
 // Score calculation function
