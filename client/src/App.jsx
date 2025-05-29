@@ -10,7 +10,7 @@ export default function App() {
     resultRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   return (
-    <div className="min-h-screen bg-[url(./bg.png)] bg-center bg-no-repeat bg-cover w-full text-white font-[syne] overflow-hidden">
+    <div className="min-h-screen bg-[url(/bg.png)] bg-center bg-no-repeat bg-cover w-full text-white font-[syne] overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between px-6 py-4 ">
         <div className="flex items-center gap-3">

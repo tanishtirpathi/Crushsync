@@ -28,7 +28,7 @@ export default function CompareForm({ onCompare, onCompareClick }) {
   };
 
   return (
-    <div className="min-h-screen w-screen    flex items-center justify-center px-4  py-16 text-white font-[syne]">
+    <div className="min-h-screen w-screen  flex items-center justify-center px-4  py-16 text-white font-[syne]">
       <div className="backdrop-blur-xl rounded-2xl p-10 w-full max-w-5xl shadow-2xl">
         <h2 className="text-3xl font-bold text-center text-[#FFE23F] mb-8 drop-shadow">
           💻 Check Your GitHub Chemistry 💖
