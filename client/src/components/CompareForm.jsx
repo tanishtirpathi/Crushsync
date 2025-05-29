@@ -10,7 +10,7 @@ export default function CompareForm({ onCompare, onCompareClick }) {
     if (!user1 || !user2) return;
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/compare", {
+      const res = await fetch("https://crushsync.onrender.com/compare", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user1, user2 }),
