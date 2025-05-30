@@ -217,5 +217,3 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Syne:wght@400..800&display=swap');

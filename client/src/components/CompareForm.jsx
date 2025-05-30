@@ -53,7 +53,7 @@ export default function CompareForm({ onCompareClick, onCompare }) {
 
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           <img
-            src="./image.jpg"
+            src="/image.jpg"
             alt="Pixel art"
             className="w-104 h-auto drop-shadow-lg rounded-lg"
           />
