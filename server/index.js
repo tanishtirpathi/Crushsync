@@ -17,8 +17,6 @@ app.use(express.json());
 
 // Serve frontend (Vite build)
 app.use(express.static(path.join(__dirname, "../client/dist")));
-
-// API route
 app.post("/compare", async (req, res) => {
   const { user1, user2 } = req.body;
 
