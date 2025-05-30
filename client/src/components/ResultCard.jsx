@@ -18,37 +18,37 @@ const Result = forwardRef((props, ref) => {
 
       {/* User Cards */}
       <div className="flex flex-wrap justify-center gap-x-32">
-  
+        {[data.user1, data.user2].map((user) => (
           <div
-            key={data.user.login}
+            key={user.login}
             className="flex flex-col items-center bg-[#11193C] p-6 rounded-3xl w-80 shadow-xl shadow-[#3D73FF]/40 border border-[#3D73FF]/20 hover:scale-105 transition-transform duration-300"
-          >data.
+          >
             <img
-              src={data.user.avatar_url}
-              alt={`${data.user.login}'s avatar`}
+              src={user.avatar_url}
+              alt={`${user.login}'s avatar`}
               className="w-28 h-28 rounded-full object-cover border-4 border-[#3D73FF] shadow mb-4"
             />
             <h2 className="text-2xl font-bold text-[#FFE23F] mb-1">
-              {data.user.login}
+              {user.login}
             </h2>
             <p className="text-sm text-[#C3D0F7] p-3 rounded-md bg-[#0A0F2C] border border-[#FF3B3B] mb-4">
-              {data.user.bio || "No bio available"}
+              {user.bio || "No bio available"}
             </p>
             <div className="grid grid-cols-3 gap-2 w-full text-center text-sm text-[#C3D0F7]">
               <div className="bg-[#0A0F2C] px-2 py-2 rounded-md shadow-inner">
-                {data.user.followers} Followers
+                {user.followers} Followers
               </div>
               <div className="bg-[#0A0F2C] px-2 py-2 rounded-md shadow-inner">
-                {data.user.following} Following
+                {user.following} Following
               </div>
               <div className="bg-[#0A0F2C] px-2 py-2 rounded-md shadow-inner">
-                {data.user.public_repos} Repos
+                {user.public_repos} Repos
               </div>
             </div>
             <div ref={ref} className="mt-4 flex gap-3">
-              <RainbowButton>{data.user.location || "Unknown"}</RainbowButton>
+              <RainbowButton>{user.location || "Unknown"}</RainbowButton>
               <a
-                href={`https://github.com/${data.user.login}`}
+                href={`https://github.com/${user.login}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -56,6 +56,7 @@ const Result = forwardRef((props, ref) => {
               </a>
             </div>
           </div>
+        ))}
       </div>
 
       {/* Score Section */}
